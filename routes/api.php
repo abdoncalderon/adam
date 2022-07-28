@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+/* Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
-});
+}); */
+
+Route::resource('region',App\Http\Controllers\Settings\RegionController::class);
+Route::resource('country',App\Http\Controllers\Settings\CountryController::class);
+Route::resource('company',App\Http\Controllers\Settings\CompanyController::class);

@@ -1,15 +1,3 @@
-
-/* require('./bootstrap');
-
-window.Vue = require('vue').default;
-
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-
-const app = new Vue({
-    el: '#app',
-});
- */
-
 require('./bootstrap');
 
 window.Vue = require('vue').default;
@@ -25,7 +13,7 @@ import axios from 'axios';
 
 import vuetify from './vuetify';
 
-import { store } from './store/store';
+// import { store } from './store/store';
 
 Vue.use(VueRouter);
 Vue.use(VueAxios, axios);
@@ -40,7 +28,5 @@ const app = new Vue({
     router: router,
     vuetify,
     render: h => h(App),
-    store
+    
 });
-
-// app.use(store)

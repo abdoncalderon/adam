@@ -1,8 +1,17 @@
 <template>
-    <v-app-bar>
-        <v-app-bar-title>Hola</v-app-bar-title>
-    </v-app-bar>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">Example Component</div>
 
+                    <div class="card-body">
+                        I'm an example component.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>

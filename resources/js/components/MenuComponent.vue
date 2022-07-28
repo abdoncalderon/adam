@@ -1,6 +1,5 @@
 <template>
-    <v-navigation-drawer v-model="$store.state.showMenu" app dark >
-        {{ $store.state.showMenu }}
+    <v-navigation-drawer v-model="drawer" app dark >
         <v-list-item class="subtitle-2" dense>Kapatax</v-list-item>   
         <v-divider dense class="ma-0"></v-divider>  
 
@@ -23,7 +22,6 @@
                 </v-list-item>
 
         </v-list-group>
-            
     </v-navigation-drawer>
 </template>
 
@@ -31,7 +29,7 @@
     export default {
         props: {
             menus: [],
+            drawer: Boolean
         },
-        
     }
 </script>

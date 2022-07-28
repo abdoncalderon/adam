@@ -3,18 +3,18 @@
 
 		<!-- Main Menu -->
 		
-		<menu-component :menus="menus"></menu-component>	
+		<menu-component :menus="menus" :drawer="drawer"></menu-component>	
 
 		<!-- Title Bar -->
 
-		<app-title-component :projectName="projectName"></app-title-component>
+		<app-title-component :projectName="projectName" :drawer="drawer" @clickMenu="showMenu"></app-title-component>
 
-		<!-- Main -->
+		<!-- Content -->
 
 		<v-main style="background-color: #ECEFF1">
-			
 			<router-view></router-view>
 		</v-main>
+
 	</v-app>
 </template>
 
@@ -53,16 +53,17 @@ export default {
 			},
 			
 		],
-		
+		drawer: false,
 		submenu: false,
 		right: null,
 		projectName: 'Consorcio Linea 1'
 	}),
-	/* computed: {
-		showMenu () {
-			return this.$store.state.showMenu
+	methods: {
+		showMenu(click) {
+			this.drawer = click
 		}
-	} */
+	}
+	
 	
 };
 </script>
