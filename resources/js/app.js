@@ -13,7 +13,10 @@ import axios from 'axios';
 
 import vuetify from './vuetify';
 
-// import { store } from './store/store';
+import { trnsl } from './lang/languages'
+
+Vue.prototype.$messages = trnsl.messages
+Vue.prototype.$content = trnsl.content
 
 Vue.use(VueRouter);
 Vue.use(VueAxios, axios);
@@ -28,5 +31,4 @@ const app = new Vue({
     router: router,
     vuetify,
     render: h => h(App),
-    
 });

@@ -28,9 +28,9 @@ class RegionController extends Controller
         return response()->json($region);
     }
     
-    public function update(Region $region, Request $request)
+    public function update(Request $request, Region $region)
     {
-        $region->update($request->validated());
+        $region->fill($request->post())->save();
         return response()->json($region);
     }
 

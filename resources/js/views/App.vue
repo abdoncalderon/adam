@@ -10,8 +10,9 @@
 		<app-title-component :projectName="projectName" :drawer="drawer" @clickMenu="showMenu"></app-title-component>
 
 		<!-- Content -->
-
+		
 		<v-main style="background-color: #ECEFF1">
+			
 			<router-view></router-view>
 		</v-main>
 
@@ -21,6 +22,7 @@
 <script>
 import MenuComponent from '../components/MenuComponent.vue';
 import AppTitleComponent from '../components/AppTitleComponent.vue';
+
 
 export default {
   	components: { MenuComponent, AppTitleComponent },
@@ -56,7 +58,8 @@ export default {
 		drawer: false,
 		submenu: false,
 		right: null,
-		projectName: 'Consorcio Linea 1'
+		projectName: 'Consorcio Linea 1',
+		
 	}),
 	methods: {
 		showMenu(click) {

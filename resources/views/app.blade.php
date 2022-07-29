@@ -23,6 +23,7 @@
     </div>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="https://unpkg.com/vue-i18n@8"></script>
     
 </body>
 </html>
