@@ -17,10 +17,10 @@ class RegionController extends Controller
         return response()->json($regions);
     }
 
-    public function store(Request $request )
+    public function store(Request $request)
     {
-        $region = Region::create($request ->validated());
-        return response()->json($region);
+        $region = Region::create($request->post());
+        return response()->json($request);
     }
 
     public function show(Region $region)

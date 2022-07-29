@@ -9,27 +9,34 @@
         
         <v-toolbar dense height="40px">
 
-            <create-component :item="item" @newItem="storeItem"></create-component>
+            <!-- New Item -->
+            <form-component :item="region" :dataset="dataset" @newItem="store"></form-component>
 
             <!-- List Items -->
-            <v-btn icon small @click="showList=!showList"><v-icon>mdi-table</v-icon></v-btn>
+            <v-btn icon small @click="showList=!showList" ><v-icon>mdi-table</v-icon></v-btn>
 
         </v-toolbar>
-
-
             
-        <list-component :show="showList" title="Country" :headers="headers" :items="items" :edit="true" :delete="true" sortField="name"></list-component>
+        <list-component 
+            :show="showList" 
+            title="Country" 
+            :headers="headers" 
+            :items="items"
+            :edit="true" 
+            :delete="true" 
+            sortField="name"
+            @deleteItem="destroy"
+        ></list-component>
         
     </v-card>
 </template>
 <script>
 
     import ListComponent from '../../components/ListComponent.vue'
-    import CreateComponent from '../../components/CreateComponent.vue'
-
+    import FormComponent from '../../components/FormComponent.vue'
 
     export default {
-        components: { ListComponent, CreateComponent },
+        components: { ListComponent, FormComponent },
         data: () => ({
             search: '',
             showList: true,
@@ -39,12 +46,18 @@
                 { text: 'Actions', value: 'actions', align: 'start', sortable: false },
             ],
             items: [],
-            item: undefined
+            dataset: [
+                {name: 'name', type: 'text', lenght: 255, text: 'Name', value: ''},
+            ],
+            region: {
+                name:"",
+            }
+                
         }),
 
         methods: {
 
-            async regionsList(){
+            async list(){
                 await this.axios.get('/api/region')
                     .then(response=>{
                         this.items = response.data
@@ -53,10 +66,30 @@
                         this.items = []
                     })
             },
+
+            async store(){
+                await this.axios.post('/api/region',this.region)
+                .then(response=>{
+                    this.list()
+                })
+                .catch(error=>{
+                    console.log(error)
+                })
+            },
+
+            destroy(selectedItem){
+                var id = selectedItem.id
+                this.axios.delete(`/api/region/${id}`).then(response=>{
+                    this.list()
+                }).catch(error=>{
+                    console.log(error)
+                })
+            }
+            
         },
 
         mounted() {
-            this.regionsList()
+            this.list()
         },
     }
 </script>

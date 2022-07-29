@@ -20,6 +20,8 @@
                         vertical
                     ></v-divider>
 
+
+
                     <!-- Delete Dialog -->
                     <v-dialog 
                         v-model="dialogDelete" 
@@ -80,8 +82,8 @@
                 search: '',
                 dialogEdit: false,
                 dialogDelete: false,
-                editedIndex: -1,
-                editedItem: [],
+                selectedIndex: -1,
+                selectedItem: [],
                 defaultItem: [],
             }
         },
@@ -90,6 +92,7 @@
             edit: Boolean,
             headers: Array,
             items: Array,
+            
             show: Boolean,
             sortField: String,
             title: String,
@@ -102,27 +105,28 @@
 
         methods: {
             editItem (item) {
-                this.editedIndex = this.desserts.indexOf(item)
-                this.editedItem = Object.assign({}, item)
-                this.dialog = true
+                this.selectIndex = this.items.indexOf(item)
+                this.selectedItem = Object.assign({}, item)
+                this.dialogEdit = true
             },
 
             deleteItem (item) {
-                this.editedIndex = this.desserts.indexOf(item)
-                this.editedItem = Object.assign({}, item)
+                this.selectedIndex = this.items.indexOf(item)
+                this.selectedItem = Object.assign({}, item)
                 this.dialogDelete = true
             },
 
             deleteItemConfirm () {
-                this.desserts.splice(this.editedIndex, 1)
+                this.items.splice(this.selectedIndex, 1)
+                this.$emit('deleteItem',this.selectedItem)
                 this.closeDelete()
             },
 
             closeDelete () {
                 this.dialogDelete = false
                 this.$nextTick(() => {
-                    this.editedItem = Object.assign({}, this.defaultItem)
-                    this.editedIndex = -1
+                    this.selectedItem = Object.assign({}, this.defaultItem)
+                    this.selectedIndex = -1
                 })
             },
         }
