@@ -3,9 +3,11 @@
         
         <form @submit.prevent="save">
            
-            <v-toolbar dense flat>
-                <v-toolbar-title dense>{{ title }}</v-toolbar-title>
-            </v-toolbar>
+            
+            <v-card-title dense>{{ title }}</v-card-title>
+            <v-card-subtitle dense>{{ title }}</v-card-subtitle>
+
+            <hr>
 
             <v-container fluid>
 
@@ -155,7 +157,7 @@
 
             </v-container>
 
-            <hr>
+       
 
             <!-- <v-card-actions>
                 <v-btn
