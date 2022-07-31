@@ -1,21 +1,29 @@
 <template>
-    <v-card class="ma-2" >
+    <v-sheet class="ma-2 pa-2" >
 
-        <v-app-bar color="grey" dark height="30px">
+        <v-app-bar color="grey" dark height="40px" flat>
             <span class="subtitle-2">{{ $content.region }}</span>
             <v-spacer></v-spacer>
-            <router-link to="/"><v-icon class="subtitle-2">mdi-close</v-icon></router-link>
+            <v-icon medium @click="home" class="subtitle-2">mdi-close</v-icon>
         </v-app-bar>
         
-        <v-toolbar dense height="40px">
+        <!-- <v-app-bar height="50px" flat> -->
 
             <!-- New Item -->
-            <v-btn icon small @click="showForm=!showForm" ><v-icon>mdi-plus</v-icon></v-btn>
+            <!-- <v-btn icon fab @click="showFormClick"><v-icon>mdi-plus</v-icon></v-btn>
+ -->
+            <!-- List Items -->
+            <!-- <v-btn icon fab @click="showListClick" ><v-icon>mdi-table</v-icon></v-btn> -->
 
             <!-- List Items -->
-            <v-btn icon small @click="showList=!showList" ><v-icon>mdi-table</v-icon></v-btn>
+            <!-- <v-btn icon fab @click="showListClick" ><v-icon>mdi-content-save</v-icon></v-btn> -->
 
-        </v-toolbar>
+        <!-- </v-app-bar> -->
+
+        <toolbar-component
+            :icons="icons"
+            @clickIcon="clickIcon"
+        />
 
         <!-- <form-dialog-component
             :showForm="showForm"
@@ -27,11 +35,12 @@
 
         <form-component
             :showForm="showForm"
+            :title="$content.region"
             :item="region" 
             :dataset="dataset" 
             @newItem="store"
             @closed="closeForm"
-        ></form-component>
+        />
             
         <list-component 
             :showList="showList" 
@@ -44,19 +53,21 @@
             :sortField="sortField"
             @editItem="update"
             @deleteItem="destroy"
-        ></list-component>
+        />
         
-    </v-card>
+    </v-sheet>
 </template>
 <script>
 
-    import ListComponent from '../../components/ListComponent.vue'
-    import FormDialogComponent from '../../components/FormDialogComponent.vue'
-    import FormComponent from '../../components/FormComponent.vue'
+    import ListComponent from '../../components/widgets/List/ListComponent.vue'
+    // import FormDialogComponent from '../../components/widgets/Dialogs/FormDialogComponent.vue'
+    import FormComponent from '../../components/widgets/Form/FormComponent.vue'
+    import ToolbarComponent from '../../components/widgets/Toolbar/ToolbarComponent.vue'
+
 
     export default {
 
-        components: { ListComponent, FormDialogComponent, FormComponent },
+        components: { ListComponent, FormComponent, ToolbarComponent },
 
         data: () => ({
             search: '',
@@ -68,22 +79,34 @@
             ],
             items: [],
             dataset: [
-                {name: 'name', type: 'text', lenght: 255, text: 'Name', value: '',},
-                {name: 'gender', type: 'radio', text: 'Gender', value: '',items: [
-                    {id: 1, name: 'Masculino'},
-                    {id: 2, name: 'Femenino'},
-                ]},
-                {name: 'country', type: 'select', text: 'Country', value: '', items: [
+                {name: 'name', type: 'text', lenght: 255, text: 'Name', value: '', lg: 8, md: 6,},
+                {name: 'country', type: 'select', text: 'Country', value: '', lg: 4, md: 6, items: [
                     {id: 1, name: 'Ecuador'},
                     {id: 2, name: 'España'},
                     {id: 3, name: 'Mexico'},
                 ]},
+                {name: 'gender', type: 'radio', text: 'Gender', value: '', lg: 12, md: 12, items: [
+                    {id: 1, name: 'Masculino'},
+                    {id: 2, name: 'Femenino'},
+                    {id: 3, name: 'Masculino'},
+                    {id: 4, name: 'Femenino'},
+                ]},
+                {name: 'edad', type: 'number', lenght: 2, text: 'Edad', value: '', lg: 4, md: 4, suffix: 'años'},
+                {name: 'clave', type: 'password', lenght: 16, text: 'Password', value: '', lg: 8, md: 6, show: false},
+                {name: 'fecha', type: 'date', text: 'Fecha', value: '', lg: 4, md: 6,},
+                {name: 'casado', type: 'switch', text: 'Casado', value: '', lg: 3, md: 3,},
+                {name: 'email', type: 'email', text: 'Email', value: '', lg: 5, md: 5, suffix: '@gmail.com'},
             ],
             region: {
                 name:"",
             },
             sortField: 'name',
-
+            icons: [
+                {id: 'list', text: 'List', icon: 'mdi-table'},
+                {id: 'new', text: 'New', icon: 'mdi-plus'},
+                {id: 'save', text: 'Save', icon: 'mdi-content-save'},
+                {id: 'cancel', text: 'Cancel', icon: 'mdi-cancel'}
+            ]
         }),
 
         methods: {
@@ -132,6 +155,24 @@
 
             closeForm() {
                 this.showForm = false
+            },
+            
+            
+            home(){
+                this.$router.push('/')
+            },
+            clickIcon(icon) {
+                if (icon.id==='new') {
+                    this.showForm = true
+                    this.showList = false
+                }
+                if (icon.id==='list'){ 
+                    this.showForm = false
+                    this.showList = true
+                }
+                if (icon.id==='save') { }
+                if (icon.id==='cancel') { }
+
             }
             
         },

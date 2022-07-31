@@ -1,8 +1,9 @@
 <?php
 
-namespace Database\Seeders;
-
+use App\Models\MaterialType;
+use App\Models\RolePermit;
 use Illuminate\Database\Seeder;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,6 +14,19 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        $this->call([
+            StakeholderTypesSeeder::class,
+            GenderSeeder::class,
+            GroupSeeder::class,
+            StatusSeeder::class,
+            DefaultSeeder::class,
+            MenuSeeder::class,
+            RoleMenuSeeder::class,
+            PermitSeeder::class,
+            RolePermitSeeder::class,
+            
+        ]);
+
+        
     }
 }

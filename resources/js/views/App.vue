@@ -3,54 +3,52 @@
 
 		<!-- Main Menu -->
 		
-		<menu-component :menus="menus" :drawer="drawer"></menu-component>	
+		<menu-component :menus="menus" :drawer="drawer" :user="user" :logo="logo"></menu-component>	
 
 		<!-- Title Bar -->
 
-		<app-title-component :projectName="projectName" :drawer="drawer" @clickMenu="showMenu"></app-title-component>
+		<header-component :projectName="projectName" :drawer="drawer" @clickMenu="showMenu"/>
 
 		<!-- Content -->
 		
-		<v-main style="background-color: #ECEFF1">
-			
-			<router-view></router-view>
-		</v-main>
+		<content-component/>
+		
 
 	</v-app>
 </template>
 
 <script>
 import MenuComponent from '../components/MenuComponent.vue';
-import AppTitleComponent from '../components/AppTitleComponent.vue';
-
+import HeaderComponent from '../components/HeaderComponent.vue';
+import ContentComponent from '../components/ContentComponent.vue';
 
 export default {
-  	components: { MenuComponent, AppTitleComponent },
+  	components: { MenuComponent, HeaderComponent, ContentComponent },
 	name: 'App',
 	data: () => ({
 		
 		menus: [
 			{ 
 				code:'settings',
-			 	title: 'Settings', 
-				icon: 'mdi-circle-outline',
+			 	text: 'Settings', 
+				icon: 'mdi-database',
 				route: '', 
 				menus: [
-							{ code:'settings.regions', title: 'Regions', icon: 'mdi-circle-outline', route: '/regions', menus:[] },
-							{ code:'settings.countries', title: 'Countries', icon: 'mdi-circle-outline', route: '/countries',  menus:[] },
-							{ code:'settings.companies', title: 'Companies', icon: 'mdi-circle-outline', route: '/companies',  menus:[] },
+							{ code:'settings.regions', text: 'Regions', icon: 'mdi-circle-outline', route: '/regions', menus:[] },
+							{ code:'settings.countries', text: 'Countries', icon: 'mdi-circle-outline', route: '/countries',  menus:[] },
+							{ code:'settings.companies', text: 'Companies', icon: 'mdi-circle-outline', route: '/companies',  menus:[] },
 						],
 			},
 			{ 	code:'project', 
-				title: 'Project', 
-				icon: 'mdi-circle-outline', 
-				route: '', 
+				text: 'Project', 
+				icon: 'mdi-tune', 
+				route: '/', 
 				menus:[] ,
 			},
 			{ 	code:'production', 
-				title: 'Production', 
-				icon: 'mdi-circle-outline', 
-				route: '', 
+				text: 'Production', 
+				icon: 'mdi-account-hard-hat', 
+				route: '/', 
 				menus:[],
 			},
 			
@@ -59,7 +57,14 @@ export default {
 		submenu: false,
 		right: null,
 		projectName: 'Consorcio Linea 1',
+		logo: require('../../../storage/app/public/settings/logo/kapatax.png'),
+		user: {
+			name: 'abdonc',
+			avatar: require('../../../storage/app/public/people/photos/abdonc.jpg'),
+			email: 'abdonc@gmail.com'
+		}
 		
+
 	}),
 	methods: {
 		showMenu(click) {
