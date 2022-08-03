@@ -13,6 +13,7 @@ export const contentES = {
    address:'Dirección',
    administration:'Administración',
    admissions:'Admisiones',
+   age: 'Edad',
    agreement:'Contrato',
    agreements:'Contratos',
    all:'Todos',

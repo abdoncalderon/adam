@@ -1,19 +1,36 @@
 <template>
+
     <v-app-bar dense height="55px" flat outlined>
 
-        <v-btn
-            v-for="icon in icons"
-            :key="icon.id"
-            icon
-            fab
-            @click="click(icon)"
-        >
-            <v-icon
+        <template v-for="icon in icons">
+            <v-btn 
+                v-if="icon.text"
+                class="mr-2 text-capitalize"
+                :key="icon.id"
+                :color="icon.color"
+                small
+                @click="click(icon)"
             >
-                {{ icon.icon }}
-            </v-icon>
-
-        </v-btn>
+                <v-icon left>
+                    {{ icon.icon }}
+                </v-icon>
+                {{ $trnsl(icon.text) }}
+            </v-btn>
+            <v-btn 
+                v-else
+                :key="icon.id"
+                :color="icon.color"
+                icon
+                fab
+                small
+                @click="click(icon)"
+            >
+                <v-icon>
+                    {{ icon.icon }}
+                </v-icon>
+            </v-btn>
+        </template>
+        
            
 
     </v-app-bar>

@@ -11,13 +11,14 @@ class CountryController extends Controller
 {
     public function index()
     {
-        $countries = Country::get();
+        $countries = Country::with('region')->get();
         return response()->json($countries);
+            
     }
 
     public function store(Request $request )
     {
-        $country = Country::create($request->validated());
+        $country = Country::create($request->post());
         return response()->json($country);
     }
 
@@ -28,7 +29,7 @@ class CountryController extends Controller
     
     public function update(Country $country, Request $request)
     {
-        $country->update($request->validated());
+        $country->fill($request->post())->save();
         return response()->json($country);
     }
 

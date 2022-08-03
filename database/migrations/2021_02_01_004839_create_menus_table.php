@@ -11,10 +11,10 @@ class CreateMenusTable extends Migration
         Schema::create('menus', function (Blueprint $table) {
             $table->id();
             $table->string('code')->unique();
-            $table->string('showName');
-            $table->string('father')->nullable();
+            $table->string('text');
             $table->string('route')->nullable();
             $table->string('icon')->deafult('fa fa-circle-o');
+            $table->string('father')->nullable();
             $table->boolean('isActive')->default(true);
 
             $table->timestamps();

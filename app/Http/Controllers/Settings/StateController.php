@@ -2,12 +2,8 @@
 
 namespace App\Http\Controllers\Settings;
 
-use App\Models\Country;
 use App\Models\State;
-use App\Models\Region;
 use App\Models\City;
-use App\Http\Requests\Settings\StoreStateRequest;
-use App\Http\Requests\Settings\UpdateStateRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -17,81 +13,39 @@ class StateController extends Controller
 {
     public function index()
     {
-        $states = State::get();
-        return view('settings.states.index', compact('states'));
+        $states = State::with('country')->get();
+        return response()->json($states);
     }
 
-    public function create()
+    public function store(Request $request )
     {
-        $regions = Region::get();
-        return view('settings.states.create')
-        ->with(compact('regions'));
-    }
-
-    public function store(StoreStateRequest $request )
-    {
-        try{
-            State::create($request ->validated());
-            return redirect()->route('states.index');
-        }catch(Exception $e){
-            return back()->withErrors( $e->getMessage());
-        }
-        
+        $state = State::create($request->post());
+        return response()->json($state);
     }
 
     public function show(State $state)
     {
-        return view('settings.states.show',[
-            'state'=>$state
-            ]);
-    }
-
-    public function edit(State $state)
-    {
-        $countries = Country::get();
-        return view('settings.states.edit',[
-            'state'=>$state
-            ])
-        ->with(compact('countries'));
+        return response()->json($state);
     }
     
-    public function update(State $state, UpdateStateRequest $request)
+    public function update(Request $request, State $state)
     {
-        try{
-            $state->update($request->validated());
-            return redirect()->route('states.index');
-        }catch(Exception $e){
-            return back()->withErrors( $e->getMessage());
-        }
+        $state->fill($request->post())->save();
+        return response()->json($state);
     }
 
     public function destroy(State $state)
     {
-        try{
-            $state->delete();
-            return redirect()->route('states.index');
-        }catch(Exception $e){
-            return back()->withErrors( $e->getMessage());
-        }
+        $state->delete();
+        return response()->json([
+            'message'=>'Deleted',
+        ]);
     }
 
-    public function add(StoreStateRequest $request )
+    public function getCities(State $state)
     {
-        try{
-            State::create($request ->validated());
-            return back()->withInput();
-        }catch(Exception $e){
-            return back()->withErrors( $e->getMessage());
-        }
-    }
-
-    public function getCities(Request $request, $id)
-    {
-        if($request->ajax())
-        {
-            $cities = City::where('state_id',$id)->get();
-            return response()->json($cities);
-        }
-    }
+        $cities = City::where('state_id',$state->id)->get();
+        return response()->json($cities);
+    } 
 
 }

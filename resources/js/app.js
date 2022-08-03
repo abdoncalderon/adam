@@ -15,8 +15,7 @@ import vuetify from './vuetify';
 
 import { trnsl } from './lang/languages'
 
-Vue.prototype.$messages = trnsl.messages
-Vue.prototype.$content = trnsl.content
+Vue.prototype.$trnsl = trnsl
 
 Vue.use(VueRouter);
 Vue.use(VueAxios, axios);

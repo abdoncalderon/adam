@@ -1,13 +1,12 @@
 <template>
     <v-card v-if="showForm" outlined flat >
-        
-        <form @submit.prevent="save">
-           
-            
-            <v-card-title dense>{{ title }}</v-card-title>
-            <v-card-subtitle dense>{{ title }}</v-card-subtitle>
 
-            <hr>
+        <form-header-component
+            :title="title"
+            :subtitle="subtitle" 
+        />
+
+        <form @submit.prevent="save">
 
             <v-container fluid>
 
@@ -32,8 +31,8 @@
                             class="ma-2"
                             autofocus
                             v-model="item[field.name]" 
-                            :type="text"
-                            :label="field.text" 
+                            type="text"
+                            :label="$trnsl(field.text)" 
                             :counter="field.lenght"
                             dense
                         ></v-text-field>
@@ -43,7 +42,7 @@
                             class="ma-2"
                             v-model="item[field.name]" 
                             type="number"
-                            :label="field.text" 
+                            :label="$trnsl(field.text)" 
                             :prefix="field.prefix"
                             :suffix="field.suffix"
                             dense
@@ -55,7 +54,7 @@
                             v-model="item[field.name]" 
                             :append-icon="field.show ? 'mdi-eye' : 'mdi-eye-off'"
                             :type="field.show ? 'text' : 'password'"
-                            :label="field.text" 
+                            :label="$trnsl(field.text)" 
                             :counter="field.lenght"
                             dense
                             @click:append="field.show = !field.show"
@@ -66,7 +65,7 @@
                             class="ma-2"
                             v-model="item[field.name]" 
                             type="date"
-                            :label="field.text" 
+                            :label="$trnsl(field.text)" 
                             dense
                         ></v-text-field>
 
@@ -75,7 +74,7 @@
                             class="ma-2"
                             v-model="item[field.name]" 
                             type="email"
-                            :label="field.text" 
+                            :label="$trnsl(field.text)" 
                             :prefix="field.prefix"
                             :suffix="field.suffix"
                             dense
@@ -85,7 +84,7 @@
                             v-if="field.type=='select'"
                             class="ma-2"
                             :items="field.items"
-                            :label="field.text"
+                            :label="$trnsl(field.text)"
                             item-text="name"
                             item-value="id"
                             dense
@@ -107,7 +106,7 @@
                                     <p 
                                         class="body-1 text--grey pl-2" 
                                     >
-                                        {{ field.text }}
+                                        {{ $trnsl(field.text) }}
                                     </p>
                                 </v-col>
 
@@ -141,7 +140,7 @@
                                     <p
                                         class="body-1" 
                                         style="color: gray; padding: 15px 0px 0px 10px"
-                                    >{{ field.text }}</p>
+                                    >{{ $trnsl(field.text) }}</p>
                                 </v-col>
                                 <v-col cols="4" align-self="center">
                                     <v-switch
@@ -156,8 +155,6 @@
                 </v-row>
 
             </v-container>
-
-       
 
             <!-- <v-card-actions>
                 <v-btn
@@ -176,13 +173,18 @@
                     {{ $content.save }}
                 </v-btn>
             </v-card-actions> -->
+
+            
         </form>
     </v-card>
 </template>
 <script>
+    import FormHeaderComponent from './FormHeaderComponent.vue'
     export default {
+        components: { FormHeaderComponent },
         props: {
             title: String,
+            subtitle: String,
             dataset: Array,
             item: Object,
             showForm: Boolean

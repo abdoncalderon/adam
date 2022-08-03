@@ -4,10 +4,7 @@ namespace App\Http\Controllers\Settings;
 
 use App\Http\Controllers\Controller;
 use App\Models\City;
-use App\Models\State;
-use App\Models\Region;
-use App\Http\Requests\Settings\StoreCityRequest;
-use App\Http\Requests\Settings\UpdateCityRequest;
+use Illuminate\Http\Request;
 
 use Exception;
 
@@ -16,71 +13,34 @@ class CityController extends Controller
     public function index()
     {
         $cities = City::get();
-        return view('settings.cities.index', compact('cities'));
+        return response()->json($cities);
     }
 
-    public function create()
+    public function store(Request $request )
     {
-        $regions = Region::get();
-        return view('settings.cities.create')
-        ->with(compact('regions'));
-    }
-
-    public function store(StoreCityRequest $request )
-    {
-        try{
-            City::create($request ->validated());
-            return redirect()->route('cities.index');
-        }catch(Exception $e){
-            return back()->withErrors( $e->getMessage());
-        }
+       
+        $city = City::create($request ->post());
+        return response()->json($city);
     }
 
     public function show(City $city)
     {
-        return view('settings.cities.show',[
-            'city'=>$city
-            ]);
-    }
-
-    public function edit(City $city)
-    {
-        $regions = Region::get();
-        return view('settings.cities.edit',[
-            'city'=>$city
-            ])
-        ->with(compact('regions'));
+        return response()->json($city);
     }
     
-    public function update(City $city, UpdateCityRequest $request)
+    public function update(City $city, Request $request)
     {
-        try{
-            $city->update($request->validated());
-            return redirect()->route('cities.index');
-        }catch(Exception $e){
-            return back()->withErrors( $e->getMessage());
-        }
+        $city->fill($request->post())->save();
+        return response()->json($city);
+            
     }
     
     public function destroy(City $city)
     {
-        try{
-            $city->delete();
-            return redirect()->route('cities.index');
-        }catch(Exception $e){
-            return back()->withErrors( $e->getMessage());
-        }
+        $city->delete();
+        return response()->json([
+            'message'=>'Deleted',
+        ]);
     }   
-
-    public function add(StoreCityRequest $request )
-    {
-        try{
-            City::create($request ->validated());
-            return back()->withInput();
-        }catch(Exception $e){
-            return back()->withErrors( $e->getMessage());
-        }
-    }
-
     
 }

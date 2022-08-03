@@ -7,11 +7,11 @@
         exact
     >
         <v-list-item-icon>
-            <v-icon dense v-text="menu.icon"></v-icon>
+            <v-icon small v-text="menu.icon"></v-icon>
         </v-list-item-icon>
 
         <v-list-item-content v-if="menu.text">
-            <v-list-item-title v-text="menu.text" />
+            <v-list-item-title>{{ $trnsl(menu.text) }}</v-list-item-title>
         </v-list-item-content>
 
     </v-list-item>
@@ -20,12 +20,12 @@
 
 <script>
     export default {
-      props: {
-        menu: {
-          type: Object,
-          default: () => ({}),
+        props: {
+            menu: {
+            type: Object,
+            default: () => ({}),
+            },
         },
-      },
       
     }
 </script>

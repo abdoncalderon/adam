@@ -20,4 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource('region',App\Http\Controllers\Settings\RegionController::class);
 Route::resource('country',App\Http\Controllers\Settings\CountryController::class);
+Route::resource('state',App\Http\Controllers\Settings\StateController::class);
+Route::resource('city',App\Http\Controllers\Settings\CityController::class);
 Route::resource('company',App\Http\Controllers\Settings\CompanyController::class);
+Route::resource('menu',App\Http\Controllers\Settings\MenuController::class);

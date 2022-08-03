@@ -22,6 +22,8 @@ class Menu extends Model
         return $this->hasMany(Menu::class,'father','code');
     }
 
+    
+
     public function isActive(){
         if($this->isActive==1){
             return true;

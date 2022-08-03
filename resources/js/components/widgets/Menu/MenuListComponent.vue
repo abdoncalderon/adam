@@ -7,9 +7,9 @@
     >
 
         <template v-for="menu in menus">
-
+            
             <menu-list-group-component
-                v-if="menu.route===''"
+                v-if="typeof(menu.route) === 'undefined' || menu.route === null"
                 :key="menu.code"
                 :menu="menu"
             />
