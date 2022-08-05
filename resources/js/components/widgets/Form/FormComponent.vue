@@ -90,6 +90,15 @@
                             dense
                             @input="emitChange"
                         ></v-select>
+
+                        <v-file-input
+                            v-if="field.type=='file'"
+                            class="ma-2"
+                            :label="$trnsl(field.text)"
+                            :accept="field.accept"
+                            show-size
+                            dense
+                        ></v-file-input>
                         
                         <v-card 
                             v-if="field.type=='radio'"

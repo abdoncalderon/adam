@@ -13,6 +13,9 @@
 export default {
     props: {
         error: Error,
+    },
+    created() {
+        this.error = null
     }
 }
 </script>

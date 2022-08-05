@@ -12,7 +12,7 @@ class CityController extends Controller
 {
     public function index()
     {
-        $cities = City::get();
+        $cities = City::with('state')->get();
         return response()->json($cities);
     }
 
