@@ -8,18 +8,18 @@
 
         <template v-for="menu in menus">
             
-            <menu-list-group-component
+            <menu-list-group-level0-component
                 v-if="typeof(menu.route) === 'undefined' || menu.route === null"
-                :key="menu.code"
+                :key="menu.id"
                 :menu="menu"
             />
             
-            <menu-list-item-component
+            <menu-list-item-level0-component
                 v-else
-                :key="menu.code"
+                :key="menu.id"
                 :menu="menu"
             />
-
+            
         </template>
 
     </v-list>
@@ -27,15 +27,16 @@
 </template>
 
 <script>
-    import MenuListGroupComponent from './MenuListGroupComponent.vue'
-    import MenuListItemComponent from './MenuListItemComponent.vue'
+    import MenuListGroupLevel0Component from './MenuListGroupLevel0Component.vue'
+    import MenuListItemLevel0Component from './MenuListItemLevel0Component.vue'
     export default {
-        components: { MenuListGroupComponent, MenuListItemComponent  },
+        components: { MenuListGroupLevel0Component, MenuListItemLevel0Component  },
         props: {
             menus: {
                 type: Array,
                 default: () => ({}),
             },
         },
+        
     }
 </script>

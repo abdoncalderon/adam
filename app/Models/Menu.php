@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Menu extends Model
 {
-    protected $fillable = ['code','father', 'showName', 'route', 'icon', 'isActive',];
+    protected $fillable = ['name','father', 'showName', 'route', 'icon', 'isActive',];
 
     public function menu(){
-        return $this->belongsTo(Menu::class,'father','code');
+        return $this->belongsTo(Menu::class,'father','name');
     }
 
     public function roleMenus()
@@ -19,10 +19,8 @@ class Menu extends Model
 
     public function menus()
     {
-        return $this->hasMany(Menu::class,'father','code');
+        return $this->hasMany(Menu::class,'father','name')->with('menus');
     }
-
-    
 
     public function isActive(){
         if($this->isActive==1){

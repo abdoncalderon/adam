@@ -17,128 +17,137 @@ class MenuSeeder extends Seeder
         // Settings Menu
 
         DB::table('menus')->insert([
-            'code' => 'settings',
-            'text' => 'content.settings',
+            'name' => 'setting',
+            'text' => 'content.setting',
             'route' => null,
-            'icon' => 'mdi-database',
+            'icon' => 'mdi-cogs',
         ]);
-
+                        
+        
                         DB::table('menus')->insert([
-                            'code' => 'settings.regions',
-                            'text' => 'content.regions',
-                            'father' => 'settings',
-                            'route' => '/regions',
-                            'icon' => 'mdi-circle-outline',
+                            'name' => 'settings.catalog',
+                            'text' => 'content.catalog',
+                            'father' => 'setting',
+                            'route' => null,
+                            'icon' => 'mdi-database',
                         ]);
+        
+                                        DB::table('menus')->insert([
+                                            'name' => 'settings.regions',
+                                            'text' => 'content.regions',
+                                            'father' => 'settings.catalog',
+                                            'route' => '/regions',
+                                            'icon' => 'mdi-circle-outline',
+                                        ]);
+
+                                        DB::table('menus')->insert([
+                                            'name' => 'settings.countries',
+                                            'text' => 'content.countries',
+                                            'father' => 'settings.catalog',
+                                            'route' => '/countries',
+                                            'icon' => 'mdi-circle-outline',
+                                        ]);
+
+                                        DB::table('menus')->insert([
+                                            'name' => 'settings.states',
+                                            'text' => 'content.states',
+                                            'father' => 'settings.catalog',
+                                            'route' => '/states',
+                                            'icon' => 'mdi-circle-outline',
+                                        ]);
+
+                                        DB::table('menus')->insert([
+                                            'name' => 'settings.cities',
+                                            'text' => 'content.cities',
+                                            'father' => 'settings.catalog',
+                                            'route' => '/cities',
+                                            'icon' => 'mdi-circle-outline',
+                                        ]);
+
+                                        DB::table('menus')->insert([
+                                            'name' => 'settings.menus',
+                                            'text' => 'content.menus',
+                                            'father' => 'settings.catalog',
+                                            'route' => '/menus',
+                                            'icon' => 'mdi-circle-outline',
+                                        ]);
+
+                                        DB::table('menus')->insert([
+                                            'name' => 'settings.roles',
+                                            'text' => 'content.roles',
+                                            'father' => 'settings.catalog',
+                                            'route' => '/roles',
+                                            'icon' => 'mdi-circle-outline',
+                                        ]);
+                                        
+                                        DB::table('menus')->insert([
+                                            'name' => 'settings.permits',
+                                            'text' => 'content.permits',
+                                            'father' => 'settings.catalog',
+                                            'route' => '/permits',
+                                            'icon' => 'mdi-circle-outline',
+                                        ]);
+
+                                        DB::table('menus')->insert([
+                                            'name' => 'settings.brands',
+                                            'text' => 'content.brands',
+                                            'father' => 'settings.catalog',
+                                            'route' => '/brands',
+                                            'icon' => 'mdi-circle-outline',
+                                        ]);
+                
+                                        DB::table('menus')->insert([
+                                            'name' => 'settings.models',
+                                            'text' => 'content.models',
+                                            'father' => 'settings.catalog',
+                                            'route' => '/models',
+                                            'icon' => 'mdi-circle-outline',
+                                        ]);
+                
+                                        DB::table('menus')->insert([
+                                            'name' => 'settings.unities',
+                                            'text' => 'content.unities',
+                                            'father' => 'settings.catalog',
+                                            'route' => '/unities',
+                                            'icon' => 'mdi-circle-outline',
+                                        ]);
 
                         DB::table('menus')->insert([
-                            'code' => 'settings.countries',
-                            'text' => 'content.countries',
-                            'father' => 'settings',
-                            'route' => '/countries',
-                            'icon' => 'mdi-circle-outline',
-                        ]);
-
-                        DB::table('menus')->insert([
-                            'code' => 'settings.states',
-                            'text' => 'content.states',
-                            'father' => 'settings',
-                            'route' => '/states',
-                            'icon' => 'mdi-circle-outline',
-                        ]);
-
-                        DB::table('menus')->insert([
-                            'code' => 'settings.cities',
-                            'text' => 'content.cities',
-                            'father' => 'settings',
-                            'route' => '/cities',
-                            'icon' => 'mdi-circle-outline',
-                        ]);
-
-                        DB::table('menus')->insert([
-                            'code' => 'settings.companies',
+                            'name' => 'settings.companies',
                             'text' => 'content.companies',
-                            'father' => 'settings',
+                            'father' => 'setting',
                             'route' => '/companies',
                             'icon' => 'mdi-circle-outline',
                         ]);
 
                         DB::table('menus')->insert([
-                            'code' => 'settings.divisions',
+                            'name' => 'settings.divisions',
                             'text' => 'content.divisions',
-                            'father' => 'settings',
+                            'father' => 'setting',
                             'route' => '/divisions',
                             'icon' => 'mdi-circle-outline',
                         ]);
 
                         DB::table('menus')->insert([
-                            'code' => 'settings.subsidiaries',
+                            'name' => 'settings.subsidiaries',
                             'text' => 'content.subsidiaries',
-                            'father' => 'settings',
+                            'father' => 'setting',
                             'route' => '/subsidiaries',
-                            'icon' => 'mdi-circle-outline',
-                        ]);
-
-                        DB::table('menus')->insert([
-                            'code' => 'settings.roles',
-                            'text' => 'content.roles',
-                            'father' => 'settings',
-                            'route' => '/roles',
                             'icon' => 'mdi-circle-outline',
                         ]);
                         
                         DB::table('menus')->insert([
-                            'code' => 'settings.projects',
+                            'name' => 'settings.projects',
                             'text' => 'content.projects',
-                            'father' => 'settings',
+                            'father' => 'setting',
                             'route' => '/projects',
                             'icon' => 'mdi-circle-outline',
                         ]);
 
                         DB::table('menus')->insert([
-                            'code' => 'settings.menus',
-                            'text' => 'content.menus',
-                            'father' => 'settings',
-                            'route' => '/menus',
-                            'icon' => 'mdi-circle-outline',
-                        ]);
-
-                        DB::table('menus')->insert([
-                            'code' => 'settings.permits',
-                            'text' => 'content.permits',
-                            'father' => 'settings',
-                            'route' => '/permits',
-                            'icon' => 'mdi-circle-outline',
-                        ]);
-
-                        DB::table('menus')->insert([
-                            'code' => 'settings.brands',
-                            'text' => 'content.brands',
-                            'father' => 'settings',
-                            'route' => '/brands',
-                            'icon' => 'mdi-circle-outline',
-                        ]);
-
-                        DB::table('menus')->insert([
-                            'code' => 'settings.models',
-                            'text' => 'content.models',
-                            'father' => 'settings',
-                            'route' => '/models',
-                            'icon' => 'mdi-circle-outline',
-                        ]);
-
-                        DB::table('menus')->insert([
-                            'code' => 'settings.unities',
-                            'text' => 'content.unities',
-                            'father' => 'settings',
-                            'route' => '/unities',
-                            'icon' => 'mdi-circle-outline',
-                        ]);
-
-                        DB::table('menus')->insert([
-                            'code' => 'settings.parameters',
+                            'name' => 'settings.parameters',
                             'text' => 'content.parameters',
-                            'father' => 'settings',
+                            'father' => 'setting',
                             'route' => '/',
                             'icon' => 'mdi-circle-outline',
                         ]);
@@ -146,14 +155,14 @@ class MenuSeeder extends Seeder
         // Project Menu
 
         DB::table('menus')->insert([
-            'code' => 'project',
+            'name' => 'project',
             'text' => 'content.project',
             'route' => null,
             'icon' => 'mdi-tune',
         ]);
 
                         DB::table('menus')->insert([
-                            'code' => 'project.data',
+                            'name' => 'project.data',
                             'text' => 'content.data',
                             'father' => 'project',
                             'route' => 'project.index',
@@ -161,7 +170,7 @@ class MenuSeeder extends Seeder
                         ]);
 
                         DB::table('menus')->insert([
-                            'code' => 'project.stakeholders',
+                            'name' => 'project.stakeholders',
                             'text' => 'content.stakeholders',
                             'father' => 'project',
                             'route' => 'stakeholders.index',
@@ -169,7 +178,7 @@ class MenuSeeder extends Seeder
                         ]);
 
                         DB::table('menus')->insert([
-                            'code' => 'project.functions',
+                            'name' => 'project.functions',
                             'text' => 'content.functions',
                             'father' => 'project',
                             'route' => 'functions.index',
@@ -177,7 +186,7 @@ class MenuSeeder extends Seeder
                         ]);
 
                         DB::table('menus')->insert([
-                            'code' => 'project.positions',
+                            'name' => 'project.positions',
                             'text' => 'content.positions',
                             'father' => 'project',
                             'route' => 'positions.index',
@@ -185,7 +194,7 @@ class MenuSeeder extends Seeder
                         ]);
 
                         DB::table('menus')->insert([
-                            'code' => 'project.sectors',
+                            'name' => 'project.sectors',
                             'text' => 'content.sectors',
                             'father' => 'project',
                             'route' => 'sectors.index',
@@ -193,7 +202,7 @@ class MenuSeeder extends Seeder
                         ]);
 
                         DB::table('menus')->insert([
-                            'code' => 'project.departments',
+                            'name' => 'project.departments',
                             'text' => 'content.departments',
                             'father' => 'project',
                             'route' => 'departments.index',
@@ -201,7 +210,7 @@ class MenuSeeder extends Seeder
                         ]);
 
                         DB::table('menus')->insert([
-                            'code' => 'project.zones',
+                            'name' => 'project.zones',
                             'text' => 'content.zones',
                             'father' => 'project',
                             'route' => 'zones.index',
@@ -209,7 +218,7 @@ class MenuSeeder extends Seeder
                         ]);
 
                         DB::table('menus')->insert([
-                            'code' => 'project.locations',
+                            'name' => 'project.locations',
                             'text' => 'content.locations',
                             'father' => 'project',
                             'route' => 'locations.index',
@@ -217,7 +226,7 @@ class MenuSeeder extends Seeder
                         ]);
 
                         DB::table('menus')->insert([
-                            'code' => 'project.equipments',
+                            'name' => 'project.equipments',
                             'text' => 'content.equipments',
                             'father' => 'project',
                             'route' => 'equipments.index',
@@ -225,7 +234,7 @@ class MenuSeeder extends Seeder
                         ]);
                         
                         DB::table('menus')->insert([
-                            'code' => 'project.projectUsers',
+                            'name' => 'project.projectUsers',
                             'text' => 'content.users',
                             'father' => 'project',
                             'route' => 'projectUsers.index',
@@ -233,7 +242,7 @@ class MenuSeeder extends Seeder
                         ]);
 
                         DB::table('menus')->insert([
-                            'code' => 'project.families',
+                            'name' => 'project.families',
                             'text' => 'content.families',
                             'father' => 'project',
                             'route' => 'families.index',
@@ -241,7 +250,7 @@ class MenuSeeder extends Seeder
                         ]);
 
                         DB::table('menus')->insert([
-                            'code' => 'project.categories',
+                            'name' => 'project.categories',
                             'text' => 'content.categories',
                             'father' => 'project',
                             'route' => 'categories.index',
@@ -249,15 +258,15 @@ class MenuSeeder extends Seeder
                         ]);
 
                         DB::table('menus')->insert([
-                            'code' => 'project.periods',
+                            'name' => 'project.periods',
                             'text' => 'content.periods',
                             'father' => 'project',
-                            'route' => null,
+                            'route' => '/periods',
                             'icon' => 'mdi-circle-outline',
                         ]);
 
                         DB::table('menus')->insert([
-                            'code' => 'project.shifts',
+                            'name' => 'project.shifts',
                             'text' => 'content.shifts',
                             'father' => 'project',
                             'route' => 'turns.index',
@@ -265,7 +274,7 @@ class MenuSeeder extends Seeder
                         ]);
 
                         DB::table('menus')->insert([
-                            'code' => 'project.parameters',
+                            'name' => 'project.parameters',
                             'text' => 'content.parameters',
                             'father' => 'project',
                             'route' => 'project.parameters.index',
@@ -277,14 +286,14 @@ class MenuSeeder extends Seeder
         // Administration Menu 
 
         DB::table('menus')->insert([
-            'code' => 'administration',
+            'name' => 'administration',
             'text' => 'content.administration',
             'route' => null,
             'icon' => 'mdi-face-agent',
         ]);
 
                         DB::table('menus')->insert([
-                            'code' => 'administration.technology',
+                            'name' => 'administration.technology',
                             'text' => 'content.technology',
                             'father' => 'administration',
                             'route' => null,
@@ -292,15 +301,15 @@ class MenuSeeder extends Seeder
                         ]);
 
                                         DB::table('menus')->insert([
-                                            'code' => 'administration.technology.requests',
+                                            'name' => 'administration.technology.requests',
                                             'text' => 'content.requests',
                                             'father' => 'administration.technology',
-                                            'route' => null,
+                                            'route' => '',
                                             'icon' => 'fa fa-ticket',
                                         ]);
 
                                         DB::table('menus')->insert([
-                                            'code' => 'administration.technology.assignments.',
+                                            'name' => 'administration.technology.assignments.',
                                             'text' => 'content.assignments',
                                             'father' => 'administration.technology',
                                             'route' => 'technology.stakeholderPeople.index',
@@ -308,7 +317,7 @@ class MenuSeeder extends Seeder
                                         ]);
 
                         DB::table('menus')->insert([
-                            'code' => 'administration.services',
+                            'name' => 'administration.services',
                             'text' => 'content.services',
                             'father' => 'administration',
                             'route' => null,
@@ -316,7 +325,7 @@ class MenuSeeder extends Seeder
                         ]);
 
                                         DB::table('menus')->insert([
-                                            'code' => 'administration.services.requests',
+                                            'name' => 'administration.services.requests',
                                             'text' => 'content.requests',
                                             'father' => 'administration.services',
                                             'route' => null,
@@ -324,7 +333,7 @@ class MenuSeeder extends Seeder
                                         ]);
 
                                         DB::table('menus')->insert([
-                                            'code' => 'administration.services.catering',
+                                            'name' => 'administration.services.catering',
                                             'text' => 'content.catering',
                                             'father' => 'administration.services',
                                             'route' => null,
@@ -335,14 +344,14 @@ class MenuSeeder extends Seeder
         // Production Menu 
 
         DB::table('menus')->insert([
-            'code' => 'production',
+            'name' => 'production',
             'text' => 'content.production',
             'route' => null,
             'icon' => 'mdi-dump-truck',
         ]);
 
                         DB::table('menus')->insert([
-                            'code' => 'production.workbook',
+                            'name' => 'production.workbook',
                             'text' => 'content.workbook',
                             'father' => 'production',
                             'route' => null,
@@ -350,7 +359,7 @@ class MenuSeeder extends Seeder
                         ]);
 
                                         DB::table('menus')->insert([
-                                            'code' => 'production.workbook.documents',
+                                            'name' => 'production.workbook.documents',
                                             'text' => 'content.documents',
                                             'father' => 'production.workbook',
                                             'route' => null,
@@ -358,7 +367,7 @@ class MenuSeeder extends Seeder
                                         ]);
 
                                                         DB::table('menus')->insert([
-                                                            'code' => 'production.workbook.documents.folios',
+                                                            'name' => 'production.workbook.documents.folios',
                                                             'text' => 'content.folios',
                                                             'father' => 'production.workbook.documents',
                                                             'route' => 'folios.index',
@@ -366,7 +375,7 @@ class MenuSeeder extends Seeder
                                                         ]);
 
                                                         DB::table('menus')->insert([
-                                                            'code' => 'production.workbook.documents.dailyReports',
+                                                            'name' => 'production.workbook.documents.dailyReports',
                                                             'text' => 'content.dailyreports',
                                                             'father' => 'production.workbook.documents',
                                                             'route' => 'dailyReports.index',
@@ -374,7 +383,7 @@ class MenuSeeder extends Seeder
                                                         ]);
 
                                                         DB::table('menus')->insert([
-                                                            'code' => 'production.workbook.documents.notes',
+                                                            'name' => 'production.workbook.documents.notes',
                                                             'text' => 'content.notes',
                                                             'father' => 'production.workbook.documents',
                                                             'route' => 'notes.index',
@@ -382,7 +391,7 @@ class MenuSeeder extends Seeder
                                                         ]);
 
                                         DB::table('menus')->insert([
-                                            'code' => 'production.workbook.reports',
+                                            'name' => 'production.workbook.reports',
                                             'text' => 'content.reports',
                                             'father' => 'production.workbook',
                                             'route' => null,
@@ -390,7 +399,7 @@ class MenuSeeder extends Seeder
                                         ]);
 
                                                         DB::table('menus')->insert([
-                                                            'code' => 'production.workbook.reports.folios',
+                                                            'name' => 'production.workbook.reports.folios',
                                                             'text' => 'content.folios',
                                                             'father' => 'production.workbook.reports',
                                                             'route' => null,
@@ -398,7 +407,7 @@ class MenuSeeder extends Seeder
                                                         ]);
 
                                                         DB::table('menus')->insert([
-                                                            'code' => 'production.workbook.reports.dailyReports',
+                                                            'name' => 'production.workbook.reports.dailyReports',
                                                             'text' => 'content.dailyreports',
                                                             'father' => 'production.workbook.reports',
                                                             'route' => null,
@@ -406,7 +415,7 @@ class MenuSeeder extends Seeder
                                                         ]);
 
                                                         DB::table('menus')->insert([
-                                                            'code' => 'production.workbook.reports.notes',
+                                                            'name' => 'production.workbook.reports.notes',
                                                             'text' => 'content.notes',
                                                             'father' => 'production.workbook.reports',
                                                             'route' => null,
@@ -414,7 +423,7 @@ class MenuSeeder extends Seeder
                                                         ]);
 
                                         DB::table('menus')->insert([
-                                            'code' => 'production.workbook.settings',
+                                            'name' => 'production.workbook.settings',
                                             'text' => 'content.settings',
                                             'father' => 'production.workbook',
                                             'route' => null,
@@ -422,7 +431,7 @@ class MenuSeeder extends Seeder
                                         ]);
 
                                                         DB::table('menus')->insert([
-                                                            'code' => 'production.workbook.settings.users',
+                                                            'name' => 'production.workbook.settings.users',
                                                             'text' => 'content.users',
                                                             'father' => 'production.workbook.settings',
                                                             'route' => 'workbook_settings_users',
@@ -430,7 +439,7 @@ class MenuSeeder extends Seeder
                                                         ]);
 
                                                         DB::table('menus')->insert([
-                                                            'code' => 'production.workbook.settings.locations',
+                                                            'name' => 'production.workbook.settings.locations',
                                                             'text' => 'content.locations',
                                                             'father' => 'production.workbook.settings',
                                                             'route' => 'workbook_settings_locations',
@@ -440,14 +449,14 @@ class MenuSeeder extends Seeder
         // Commercial Menu
         
         DB::table('menus')->insert([
-            'code' => 'commercial',
+            'name' => 'commercial',
             'text' => 'content.commercial',
             'route' => null,
             'icon' => 'mdi-cash',
         ]);
 
                         DB::table('menus')->insert([
-                            'code' => 'commercial.controls',
+                            'name' => 'commercial.controls',
                             'text' => 'content.controls',
                             'father' => 'commercial',
                             'route' => null,
@@ -455,7 +464,7 @@ class MenuSeeder extends Seeder
                         ]);
 
                                         DB::table('menus')->insert([
-                                            'code' => 'commercial.controls.needRequests',
+                                            'name' => 'commercial.controls.needRequests',
                                             'text' => 'messages.needRequests',
                                             'father' => 'commercial.controls',
                                             'route' => 'needRequests.index',
@@ -463,7 +472,7 @@ class MenuSeeder extends Seeder
                                         ]);
 
                                         DB::table('menus')->insert([
-                                            'code' => 'commercial.controls.receptions',
+                                            'name' => 'commercial.controls.receptions',
                                             'text' => 'content.receptions',
                                             'father' => 'commercial.controls',
                                             'route' => 'receptions.index',
@@ -471,7 +480,7 @@ class MenuSeeder extends Seeder
                                         ]);
 
                                         DB::table('menus')->insert([
-                                            'code' => 'commercial.controls.destocking',
+                                            'name' => 'commercial.controls.destocking',
                                             'text' => 'content.destocking',
                                             'father' => 'commercial.controls',
                                             'route' => 'destockingRequests.index',
@@ -481,7 +490,7 @@ class MenuSeeder extends Seeder
 
 
                         DB::table('menus')->insert([
-                            'code' => 'commercial.materials',
+                            'name' => 'commercial.materials',
                             'text' => 'content.materials',
                             'father' => 'commercial',
                             'route' => null,
@@ -489,7 +498,7 @@ class MenuSeeder extends Seeder
                         ]);
 
                                         DB::table('menus')->insert([
-                                            'code' => 'commercial.materials.record',
+                                            'name' => 'commercial.materials.record',
                                             'text' => 'content.record',
                                             'father' => 'commercial.materials',
                                             'route' => 'materials.index',
@@ -497,7 +506,7 @@ class MenuSeeder extends Seeder
                                         ]);
 
                                         DB::table('menus')->insert([
-                                            'code' => 'commercial.materials.stockingUp',
+                                            'name' => 'commercial.materials.stockingUp',
                                             'text' => 'messages.stockingUp',
                                             'father' => 'commercial.materials',
                                             'route' => null,
@@ -505,7 +514,7 @@ class MenuSeeder extends Seeder
                                         ]);
 
                                         DB::table('menus')->insert([
-                                            'code' => 'commercial.materials.reports',
+                                            'name' => 'commercial.materials.reports',
                                             'text' => 'content.reports',
                                             'father' => 'commercial.materials',
                                             'route' => null,
@@ -513,7 +522,7 @@ class MenuSeeder extends Seeder
                                         ]);
 
                         DB::table('menus')->insert([
-                            'code' => 'commercial.purchases',
+                            'name' => 'commercial.purchases',
                             'text' => 'content.purchases',
                             'father' => 'commercial',
                             'route' => null,
@@ -521,7 +530,7 @@ class MenuSeeder extends Seeder
                         ]);
 
                                         DB::table('menus')->insert([
-                                            'code' => 'commercial.purchases.purchaseRequests',
+                                            'name' => 'commercial.purchases.purchaseRequests',
                                             'text' => 'messages.purchaseRequests',
                                             'father' => 'commercial.purchases',
                                             'route' => 'purchaseRequests.index',
@@ -529,7 +538,7 @@ class MenuSeeder extends Seeder
                                         ]);
 
                                         DB::table('menus')->insert([
-                                            'code' => 'commercial.purchases.quotations',
+                                            'name' => 'commercial.purchases.quotations',
                                             'text' => 'content.quotations',
                                             'father' => 'commercial.purchases',
                                             'route' => 'quotations.index',
@@ -537,7 +546,7 @@ class MenuSeeder extends Seeder
                                         ]);
                                         
                                         DB::table('menus')->insert([
-                                            'code' => 'commercial.purchases.purchaseOrders',
+                                            'name' => 'commercial.purchases.purchaseOrders',
                                             'text' => 'messages.purchaseOrders',
                                             'father' => 'commercial.purchases',
                                             'route' => 'purchaseOrders.index',
@@ -545,7 +554,7 @@ class MenuSeeder extends Seeder
                                         ]);
 
                                         DB::table('menus')->insert([
-                                            'code' => 'commercial.purchases.reports',
+                                            'name' => 'commercial.purchases.reports',
                                             'text' => 'content.reports',
                                             'father' => 'commercial.purchases',
                                             'route' => null,
@@ -553,7 +562,7 @@ class MenuSeeder extends Seeder
                                         ]);
 
                         /* DB::table('menus')->insert([
-                            'code' => 'commercial.contracts',
+                            'name' => 'commercial.contracts',
                             'text' => 'content.contracts',
                             'father' => 'commercial',
                             'route' => null,
@@ -561,7 +570,7 @@ class MenuSeeder extends Seeder
                         ]);
 
                                         DB::table('menus')->insert([
-                                            'code' => 'commercial.contracts.serviceRequests',
+                                            'name' => 'commercial.contracts.serviceRequests',
                                             'text' => 'messages.serviceRequests',
                                             'father' => 'commercial.contracts',
                                             'route' => 'serviceRequests.index',
@@ -569,7 +578,7 @@ class MenuSeeder extends Seeder
                                         ]);
 
                                         DB::table('menus')->insert([
-                                            'code' => 'commercial.purchases.proposals',
+                                            'name' => 'commercial.purchases.proposals',
                                             'text' => 'content.proposals',
                                             'father' => 'commercial.contracts',
                                             'route' => 'serviceProposals.index',
@@ -577,7 +586,7 @@ class MenuSeeder extends Seeder
                                         ]);
 
                                         DB::table('menus')->insert([
-                                            'code' => 'commercial.contracts.serviceOrders',
+                                            'name' => 'commercial.contracts.serviceOrders',
                                             'text' => 'messages.serviceOrders',
                                             'father' => 'commercial.contracts',
                                             'route' => 'purchaseOrders.index',
@@ -585,7 +594,7 @@ class MenuSeeder extends Seeder
                                         ]);
 
                                         DB::table('menus')->insert([
-                                            'code' => 'commercial.contracts.reports',
+                                            'name' => 'commercial.contracts.reports',
                                             'text' => 'content.reports',
                                             'father' => 'commercial.contracts',
                                             'route' => null,
@@ -593,7 +602,7 @@ class MenuSeeder extends Seeder
                                         ]); */
                         
                         DB::table('menus')->insert([
-                            'code' => 'commercial.warehouses',
+                            'name' => 'commercial.warehouses',
                             'text' => 'content.warehouses',
                             'father' => 'commercial',
                             'route' => null,
@@ -601,7 +610,7 @@ class MenuSeeder extends Seeder
                         ]);             
 
                                         DB::table('menus')->insert([
-                                            'code' => 'commercial.warehouses.record',
+                                            'name' => 'commercial.warehouses.record',
                                             'text' => 'content.record',
                                             'father' => 'commercial.warehouses',
                                             'route' => 'warehouses.index',
@@ -609,7 +618,7 @@ class MenuSeeder extends Seeder
                                         ]);
 
                                         DB::table('menus')->insert([
-                                            'code' => 'commercial.warehouses.reports',
+                                            'name' => 'commercial.warehouses.reports',
                                             'text' => 'content.reports',
                                             'father' => 'commercial.warehouses',
                                             'route' => null,
@@ -617,7 +626,7 @@ class MenuSeeder extends Seeder
                                         ]);
 
                         DB::table('menus')->insert([
-                            'code' => 'commercial.assets',
+                            'name' => 'commercial.assets',
                             'text' => 'content.assets',
                             'father' => 'commercial',
                             'route' => null,
@@ -625,7 +634,7 @@ class MenuSeeder extends Seeder
                         ]);
 
                                         DB::table('menus')->insert([
-                                            'code' => 'commercial.assets.record',
+                                            'name' => 'commercial.assets.record',
                                             'text' => 'content.record',
                                             'father' => 'commercial.assets',
                                             'route' => null,
@@ -633,7 +642,7 @@ class MenuSeeder extends Seeder
                                         ]);
 
                                         DB::table('menus')->insert([
-                                            'code' => 'commercial.assets.assignments',
+                                            'name' => 'commercial.assets.assignments',
                                             'text' => 'content.assignments',
                                             'father' => 'commercial.assets',
                                             'route' => null,
@@ -641,7 +650,7 @@ class MenuSeeder extends Seeder
                                         ]);
 
                                         DB::table('menus')->insert([
-                                            'code' => 'commercial.assets.updates',
+                                            'name' => 'commercial.assets.updates',
                                             'text' => 'content.updates',
                                             'father' => 'commercial.assets',
                                             'route' => null,
@@ -649,7 +658,7 @@ class MenuSeeder extends Seeder
                                         ]);
 
                                         DB::table('menus')->insert([
-                                            'code' => 'commercial.assets.reports',
+                                            'name' => 'commercial.assets.reports',
                                             'text' => 'content.reports',
                                             'father' => 'commercial.assets',
                                             'route' => null,
@@ -660,13 +669,13 @@ class MenuSeeder extends Seeder
         // Persons Menu 
 
         DB::table('menus')->insert([
-            'code' => 'people',
+            'name' => 'people',
             'text' => 'content.people',
             'route' => null,
             'icon' => 'mdi-account',
         ]);
                         DB::table('menus')->insert([
-                            'code' => 'people.record',
+                            'name' => 'people.record',
                             'text' => 'content.record',
                             'father' => 'people',
                             'route' => 'people.index',
@@ -674,7 +683,7 @@ class MenuSeeder extends Seeder
                         ]);
 
                         DB::table('menus')->insert([
-                            'code' => 'people.payroll',
+                            'name' => 'people.payroll',
                             'text' => 'content.payroll',
                             'father' => 'people',
                             'route' => 'employees.index',
@@ -682,7 +691,7 @@ class MenuSeeder extends Seeder
                         ]);
 
                         DB::table('menus')->insert([
-                            'code' => 'people.timesheet',
+                            'name' => 'people.timesheet',
                             'text' => 'content.timesheet',
                             'father' => 'people',
                             'route' => null,
@@ -692,14 +701,14 @@ class MenuSeeder extends Seeder
         // Safety & Health Menu 
 
         DB::table('menus')->insert([
-            'code' => 'shw',
+            'name' => 'shw',
             'text' => 'content.safetyAndHealth',
             'route' => null,
             'icon' => 'mdi-safety-goggles',
         ]);
 
                         DB::table('menus')->insert([
-                            'code' => 'shw.ppes',
+                            'name' => 'shw.ppes',
                             'text' => 'content.ppes',
                             'father' => 'shw',
                             'route' => null,
@@ -707,7 +716,7 @@ class MenuSeeder extends Seeder
                         ]);
 
                                         DB::table('menus')->insert([
-                                            'code' => 'shw.ppes.assignments',
+                                            'name' => 'shw.ppes.assignments',
                                             'text' => 'content.assignments',
                                             'father' => 'shw.ppes',
                                             'route' => null,
@@ -715,7 +724,7 @@ class MenuSeeder extends Seeder
                                         ]);
 
                                         DB::table('menus')->insert([
-                                            'code' => 'shw.ppes.rules',
+                                            'name' => 'shw.ppes.rules',
                                             'text' => 'content.rules',
                                             'father' => 'shw.ppes',
                                             'route' => null,
@@ -723,7 +732,7 @@ class MenuSeeder extends Seeder
                                         ]);
 
                                         DB::table('menus')->insert([
-                                            'code' => 'shw.ppes.reports',
+                                            'name' => 'shw.ppes.reports',
                                             'text' => 'content.reports',
                                             'father' => 'shw.ppes',
                                             'route' => null,
@@ -731,7 +740,7 @@ class MenuSeeder extends Seeder
                                         ]);
 
                         DB::table('menus')->insert([
-                            'code' => 'shw.health',
+                            'name' => 'shw.health',
                             'text' => 'content.health',
                             'father' => 'shw',
                             'route' => null,
@@ -739,7 +748,7 @@ class MenuSeeder extends Seeder
                         ]);
 
                                         DB::table('menus')->insert([
-                                            'code' => 'shw.health.history',
+                                            'name' => 'shw.health.history',
                                             'text' => 'content.history',
                                             'father' => 'shw.health',
                                             'route' => null,
@@ -747,7 +756,7 @@ class MenuSeeder extends Seeder
                                         ]);
 
                                         DB::table('menus')->insert([
-                                            'code' => 'shw.health.record',
+                                            'name' => 'shw.health.record',
                                             'text' => 'content.record',
                                             'father' => 'shw.health',
                                             'route' => null,
@@ -755,7 +764,7 @@ class MenuSeeder extends Seeder
                                         ]);
 
                                         DB::table('menus')->insert([
-                                            'code' => 'shw.health.reports',
+                                            'name' => 'shw.health.reports',
                                             'text' => 'content.reports',
                                             'father' => 'shw.health',
                                             'route' => null,
@@ -763,7 +772,7 @@ class MenuSeeder extends Seeder
                                         ]);
 
                         DB::table('menus')->insert([
-                            'code' => 'shw.access',
+                            'name' => 'shw.access',
                             'text' => 'content.access',
                             'father' => 'shw',
                             'route' => null,
@@ -771,7 +780,7 @@ class MenuSeeder extends Seeder
                         ]);
 
                                         DB::table('menus')->insert([
-                                            'code' => 'shw.access.requirements',
+                                            'name' => 'shw.access.requirements',
                                             'text' => 'content.requirements',
                                             'father' => 'shw.access',
                                             'route' => null,
@@ -779,7 +788,7 @@ class MenuSeeder extends Seeder
                                         ]);
 
                                         DB::table('menus')->insert([
-                                            'code' => 'shw.access.profiles',
+                                            'name' => 'shw.access.profiles',
                                             'text' => 'content.profiles',
                                             'father' => 'shw.access',
                                             'route' => null,
@@ -788,7 +797,7 @@ class MenuSeeder extends Seeder
 
 
                                         DB::table('menus')->insert([
-                                            'code' => 'shw.access.organizations',
+                                            'name' => 'shw.access.organizations',
                                             'text' => 'content.organizations',
                                             'father' => 'shw.access',
                                             'route' => null,
@@ -796,7 +805,7 @@ class MenuSeeder extends Seeder
                                         ]);
 
                                         DB::table('menus')->insert([
-                                            'code' => 'shw.access.checkings',
+                                            'name' => 'shw.access.checkings',
                                             'text' => 'content.checkings',
                                             'father' => 'shw.access',
                                             'route' => null,
@@ -804,7 +813,7 @@ class MenuSeeder extends Seeder
                                         ]);
 
                                         DB::table('menus')->insert([
-                                            'code' => 'shw.access.reports',
+                                            'name' => 'shw.access.reports',
                                             'text' => 'content.reports',
                                             'father' => 'shw.access',
                                             'route' => null,

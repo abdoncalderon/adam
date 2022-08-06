@@ -49,6 +49,7 @@ export const contentES = {
    cancel:'Cancelar',
    cardid:'Identificación',
    cardId:'Tarjeta de Identificación',
+   catalog:'Catálogo',
    categories:'Categorias',
    category:'Categoria',
    catering:'Abastecimiento',
