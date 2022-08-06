@@ -22,7 +22,6 @@ class MenuSeeder extends Seeder
             'route' => null,
             'icon' => 'mdi-cogs',
         ]);
-                        
         
                         DB::table('menus')->insert([
                             'name' => 'settings.catalog',
@@ -297,7 +296,7 @@ class MenuSeeder extends Seeder
                             'text' => 'content.technology',
                             'father' => 'administration',
                             'route' => null,
-                            'icon' => 'fa fa-laptop',
+                            'icon' => 'mdi-laptop',
                         ]);
 
                                         DB::table('menus')->insert([
@@ -305,7 +304,7 @@ class MenuSeeder extends Seeder
                                             'text' => 'content.requests',
                                             'father' => 'administration.technology',
                                             'route' => '',
-                                            'icon' => 'fa fa-ticket',
+                                            'icon' => 'mdi-account-wrench',
                                         ]);
 
                                         DB::table('menus')->insert([
