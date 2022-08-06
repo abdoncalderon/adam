@@ -37,6 +37,8 @@
             @closed="closeForm"
         ></form-dialog-component>
 
+        
+
         <list-component 
             :showList="showList" 
             :title="$trnsl('content.region')"
