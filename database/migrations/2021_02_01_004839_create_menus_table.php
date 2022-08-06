@@ -10,7 +10,7 @@ class CreateMenusTable extends Migration
     {
         Schema::create('menus', function (Blueprint $table) {
             $table->id();
-            $table->string('code')->unique();
+            $table->string('name')->unique();
             $table->string('text');
             $table->string('route')->nullable();
             $table->string('icon')->deafult('fa fa-circle-o');

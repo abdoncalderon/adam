@@ -83,12 +83,11 @@
                 {name: 'name', type: 'text', lenght: 255, text: 'content.name', value: '', lg: 8, md: 6, sm: 12},
             ],
             icons: [
-                
                 {id: 'new', text: 'content.new', icon: 'mdi-plus', color: 'success'},
-                {id: 'import', text: 'content.import', icon: 'mdi-database-import', color: 'default'},
+                //{id: 'import', text: 'content.import', icon: 'mdi-database-import', color: 'default'},
                 // {id: 'list', text: '', icon: 'mdi-table', color: 'primary'},
-               /*  {id: 'save', text: 'Save', icon: 'mdi-content-save'},
-                {id: 'cancel', text: 'Cancel', icon: 'mdi-cancel'} */
+                //{id: 'save', text: 'Save', icon: 'mdi-content-save'},
+                //{id: 'cancel', text: 'Cancel', icon: 'mdi-cancel'} 
             ]
         }),
 
@@ -101,7 +100,6 @@
                     })
                     .catch(error=>{
                         this.error = error
-                        
                     })
             },
 

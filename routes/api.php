@@ -24,3 +24,8 @@ Route::resource('state',App\Http\Controllers\Settings\StateController::class);
 Route::resource('city',App\Http\Controllers\Settings\CityController::class);
 Route::resource('company',App\Http\Controllers\Settings\CompanyController::class);
 Route::resource('menu',App\Http\Controllers\Settings\MenuController::class);
+Route::resource('role',App\Http\Controllers\Settings\MenuController::class);
+Route::resource('permit',App\Http\Controllers\Settings\MenuController::class);
+Route::resource('brand',App\Http\Controllers\Settings\MenuController::class);
+Route::resource('model',App\Http\Controllers\Settings\MenuController::class);
+Route::resource('unity',App\Http\Controllers\Settings\MenuController::class);
