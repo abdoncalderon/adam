@@ -1,8 +1,9 @@
-const Home = ()=> import('./views/Home');
+const Home = ()=> import('./views/templates/Home');
 import RegionView from './views/settings/catalog/Region'
 import CountryView from './views/settings/catalog/Country'
 import StateView from './views/settings/catalog/State'
 import CityView from './views/settings/catalog/City'
+import MenuView from './views/settings/catalog/Menu'
 import CompanyView from './views/settings/Company'
 
 
@@ -34,6 +35,12 @@ export const routes = [
         path: '/cities',
         name: 'cities',
         component: CityView
+      },
+
+      {
+        path: '/menus',
+        name: 'menus',
+        component: MenuView
       },
     
       {
