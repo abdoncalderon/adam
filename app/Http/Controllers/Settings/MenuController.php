@@ -13,10 +13,9 @@ class MenuController extends Controller
 {
     public function index()
     {
-        $menus = Menu::where('father',null)->with('menus')->get();
+        $menus = Menu::with('menus')->get();
         return response()->json($menus);
     }
-     
 
     public function store(Request $request )
     {
@@ -72,8 +71,5 @@ class MenuController extends Controller
             ]);
         }
     }
-
-
-
 
 }

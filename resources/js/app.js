@@ -6,7 +6,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import { routes } from './routes';
 
-import App from './views/App.vue';
+import App from './views/templates/App.vue';
 
 import VueAxios from 'vue-axios';
 import axios from 'axios';
