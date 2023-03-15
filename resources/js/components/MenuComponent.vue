@@ -1,12 +1,12 @@
 <template>
     <v-navigation-drawer v-model="drawer" app dark width="300px">
 
-        <menu-header-component :logo="logo" :user="user"/>
+        <menu-header-component :logo="logo" :user="user" :photo="photo" />
 
         <v-divider dense class="ma-0"></v-divider>  
 
         <menu-list-component :menus="menus"/>
-        
+
     </v-navigation-drawer>
 </template>
 
@@ -20,12 +20,11 @@
                 type: Array,
                 default: () => ({}),
             },
-            user: {
-                type: Object,
-                default: () => ({}),
-            },
+            user: Object,
+            photo: String,
             logo: String,
-            drawer: Boolean
+            drawer: Boolean,
         },
+        
     }
 </script>

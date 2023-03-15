@@ -146,7 +146,6 @@
             clickIcon(icon) {
                 if (icon.id==='new') {
                     this.showForm = true
-                    // this.showList = false
                 }
                 if (icon.id==='list'){ 
                     this.showList = true

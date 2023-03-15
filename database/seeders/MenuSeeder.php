@@ -36,7 +36,7 @@ class MenuSeeder extends Seeder
                                             'text' => 'content.regions',
                                             'father' => 'settings.catalog',
                                             'route' => '/regions',
-                                            'icon' => 'mdi-circle-outline',
+                                            'icon' => null,
                                         ]);
 
                                         DB::table('menus')->insert([
@@ -44,7 +44,7 @@ class MenuSeeder extends Seeder
                                             'text' => 'content.countries',
                                             'father' => 'settings.catalog',
                                             'route' => '/countries',
-                                            'icon' => 'mdi-circle-outline',
+                                            'icon' => null,
                                         ]);
 
                                         DB::table('menus')->insert([
@@ -52,7 +52,7 @@ class MenuSeeder extends Seeder
                                             'text' => 'content.states',
                                             'father' => 'settings.catalog',
                                             'route' => '/states',
-                                            'icon' => 'mdi-circle-outline',
+                                            'icon' => null,
                                         ]);
 
                                         DB::table('menus')->insert([
@@ -60,7 +60,7 @@ class MenuSeeder extends Seeder
                                             'text' => 'content.cities',
                                             'father' => 'settings.catalog',
                                             'route' => '/cities',
-                                            'icon' => 'mdi-circle-outline',
+                                            'icon' => null,
                                         ]);
 
                                         DB::table('menus')->insert([
@@ -68,7 +68,7 @@ class MenuSeeder extends Seeder
                                             'text' => 'content.menus',
                                             'father' => 'settings.catalog',
                                             'route' => '/menus',
-                                            'icon' => 'mdi-circle-outline',
+                                            'icon' => null,
                                         ]);
 
                                         DB::table('menus')->insert([
@@ -76,7 +76,7 @@ class MenuSeeder extends Seeder
                                             'text' => 'content.roles',
                                             'father' => 'settings.catalog',
                                             'route' => '/roles',
-                                            'icon' => 'mdi-circle-outline',
+                                            'icon' => null,
                                         ]);
                                         
                                         DB::table('menus')->insert([
@@ -84,7 +84,7 @@ class MenuSeeder extends Seeder
                                             'text' => 'content.permits',
                                             'father' => 'settings.catalog',
                                             'route' => '/permits',
-                                            'icon' => 'mdi-circle-outline',
+                                            'icon' => null,
                                         ]);
 
                                         DB::table('menus')->insert([
@@ -92,7 +92,7 @@ class MenuSeeder extends Seeder
                                             'text' => 'content.brands',
                                             'father' => 'settings.catalog',
                                             'route' => '/brands',
-                                            'icon' => 'mdi-circle-outline',
+                                            'icon' => null,
                                         ]);
                 
                                         DB::table('menus')->insert([
@@ -100,7 +100,7 @@ class MenuSeeder extends Seeder
                                             'text' => 'content.models',
                                             'father' => 'settings.catalog',
                                             'route' => '/models',
-                                            'icon' => 'mdi-circle-outline',
+                                            'icon' => null,
                                         ]);
                 
                                         DB::table('menus')->insert([
@@ -108,7 +108,7 @@ class MenuSeeder extends Seeder
                                             'text' => 'content.unities',
                                             'father' => 'settings.catalog',
                                             'route' => '/unities',
-                                            'icon' => 'mdi-circle-outline',
+                                            'icon' => null,
                                         ]);
 
                         DB::table('menus')->insert([
@@ -116,7 +116,7 @@ class MenuSeeder extends Seeder
                             'text' => 'content.companies',
                             'father' => 'setting',
                             'route' => '/companies',
-                            'icon' => 'mdi-circle-outline',
+                            'icon' => null,
                         ]);
 
                         DB::table('menus')->insert([
@@ -124,7 +124,7 @@ class MenuSeeder extends Seeder
                             'text' => 'content.divisions',
                             'father' => 'setting',
                             'route' => '/divisions',
-                            'icon' => 'mdi-circle-outline',
+                            'icon' => null,
                         ]);
 
                         DB::table('menus')->insert([
@@ -132,7 +132,7 @@ class MenuSeeder extends Seeder
                             'text' => 'content.subsidiaries',
                             'father' => 'setting',
                             'route' => '/subsidiaries',
-                            'icon' => 'mdi-circle-outline',
+                            'icon' => null,
                         ]);
                         
                         DB::table('menus')->insert([
@@ -140,7 +140,7 @@ class MenuSeeder extends Seeder
                             'text' => 'content.projects',
                             'father' => 'setting',
                             'route' => '/projects',
-                            'icon' => 'mdi-circle-outline',
+                            'icon' => null,
                         ]);
 
                         DB::table('menus')->insert([
@@ -148,7 +148,7 @@ class MenuSeeder extends Seeder
                             'text' => 'content.parameters',
                             'father' => 'setting',
                             'route' => '/',
-                            'icon' => 'mdi-circle-outline',
+                            'icon' => null,
                         ]);
 
         // Project Menu
@@ -165,7 +165,7 @@ class MenuSeeder extends Seeder
                             'text' => 'content.data',
                             'father' => 'project',
                             'route' => 'project.index',
-                            'icon' => 'mdi-circle-outline',
+                            'icon' => null,
                         ]);
 
                         DB::table('menus')->insert([
@@ -173,7 +173,7 @@ class MenuSeeder extends Seeder
                             'text' => 'content.stakeholders',
                             'father' => 'project',
                             'route' => 'stakeholders.index',
-                            'icon' => 'mdi-circle-outline',
+                            'icon' => null,
                         ]);
 
                         DB::table('menus')->insert([
@@ -181,7 +181,7 @@ class MenuSeeder extends Seeder
                             'text' => 'content.functions',
                             'father' => 'project',
                             'route' => 'functions.index',
-                            'icon' => 'mdi-circle-outline',
+                            'icon' => null,
                         ]);
 
                         DB::table('menus')->insert([
@@ -189,7 +189,7 @@ class MenuSeeder extends Seeder
                             'text' => 'content.positions',
                             'father' => 'project',
                             'route' => 'positions.index',
-                            'icon' => 'mdi-circle-outline',
+                            'icon' => null,
                         ]);
 
                         DB::table('menus')->insert([
@@ -197,7 +197,7 @@ class MenuSeeder extends Seeder
                             'text' => 'content.sectors',
                             'father' => 'project',
                             'route' => 'sectors.index',
-                            'icon' => 'mdi-circle-outline',
+                            'icon' => null,
                         ]);
 
                         DB::table('menus')->insert([
@@ -205,7 +205,7 @@ class MenuSeeder extends Seeder
                             'text' => 'content.departments',
                             'father' => 'project',
                             'route' => 'departments.index',
-                            'icon' => 'mdi-circle-outline',
+                            'icon' => null,
                         ]);
 
                         DB::table('menus')->insert([
@@ -213,7 +213,7 @@ class MenuSeeder extends Seeder
                             'text' => 'content.zones',
                             'father' => 'project',
                             'route' => 'zones.index',
-                            'icon' => 'mdi-circle-outline',
+                            'icon' => null,
                         ]);
 
                         DB::table('menus')->insert([
@@ -221,7 +221,7 @@ class MenuSeeder extends Seeder
                             'text' => 'content.locations',
                             'father' => 'project',
                             'route' => 'locations.index',
-                            'icon' => 'mdi-circle-outline',
+                            'icon' => null,
                         ]);
 
                         DB::table('menus')->insert([
@@ -229,7 +229,7 @@ class MenuSeeder extends Seeder
                             'text' => 'content.equipments',
                             'father' => 'project',
                             'route' => 'equipments.index',
-                            'icon' => 'mdi-circle-outline',
+                            'icon' => null,
                         ]);
                         
                         DB::table('menus')->insert([
@@ -237,7 +237,7 @@ class MenuSeeder extends Seeder
                             'text' => 'content.users',
                             'father' => 'project',
                             'route' => 'projectUsers.index',
-                            'icon' => 'mdi-circle-outline',
+                            'icon' => null,
                         ]);
 
                         DB::table('menus')->insert([
@@ -245,7 +245,7 @@ class MenuSeeder extends Seeder
                             'text' => 'content.families',
                             'father' => 'project',
                             'route' => 'families.index',
-                            'icon' => 'mdi-circle-outline',
+                            'icon' => null,
                         ]);
 
                         DB::table('menus')->insert([
@@ -253,7 +253,7 @@ class MenuSeeder extends Seeder
                             'text' => 'content.categories',
                             'father' => 'project',
                             'route' => 'categories.index',
-                            'icon' => 'mdi-circle-outline',
+                            'icon' => null,
                         ]);
 
                         DB::table('menus')->insert([
@@ -261,7 +261,7 @@ class MenuSeeder extends Seeder
                             'text' => 'content.periods',
                             'father' => 'project',
                             'route' => '/periods',
-                            'icon' => 'mdi-circle-outline',
+                            'icon' => null,
                         ]);
 
                         DB::table('menus')->insert([
@@ -269,7 +269,7 @@ class MenuSeeder extends Seeder
                             'text' => 'content.shifts',
                             'father' => 'project',
                             'route' => 'turns.index',
-                            'icon' => 'mdi-circle-outline',
+                            'icon' => null,
                         ]);
 
                         DB::table('menus')->insert([
@@ -277,7 +277,7 @@ class MenuSeeder extends Seeder
                             'text' => 'content.parameters',
                             'father' => 'project',
                             'route' => 'project.parameters.index',
-                            'icon' => 'mdi-circle-outline',
+                            'icon' => null,
                         ]);
 
                         
@@ -370,7 +370,7 @@ class MenuSeeder extends Seeder
                                                             'text' => 'content.folios',
                                                             'father' => 'production.workbook.documents',
                                                             'route' => 'folios.index',
-                                                            'icon' => 'mdi-circle-outline',
+                                                            'icon' => null,
                                                         ]);
 
                                                         DB::table('menus')->insert([
@@ -378,7 +378,7 @@ class MenuSeeder extends Seeder
                                                             'text' => 'content.dailyreports',
                                                             'father' => 'production.workbook.documents',
                                                             'route' => 'dailyReports.index',
-                                                            'icon' => 'mdi-circle-outline',
+                                                            'icon' => null,
                                                         ]);
 
                                                         DB::table('menus')->insert([
@@ -386,7 +386,7 @@ class MenuSeeder extends Seeder
                                                             'text' => 'content.notes',
                                                             'father' => 'production.workbook.documents',
                                                             'route' => 'notes.index',
-                                                            'icon' => 'mdi-circle-outline',
+                                                            'icon' => null,
                                                         ]);
 
                                         DB::table('menus')->insert([
@@ -402,7 +402,7 @@ class MenuSeeder extends Seeder
                                                             'text' => 'content.folios',
                                                             'father' => 'production.workbook.reports',
                                                             'route' => null,
-                                                            'icon' => 'mdi-circle-outline',
+                                                            'icon' => null,
                                                         ]);
 
                                                         DB::table('menus')->insert([
@@ -410,7 +410,7 @@ class MenuSeeder extends Seeder
                                                             'text' => 'content.dailyreports',
                                                             'father' => 'production.workbook.reports',
                                                             'route' => null,
-                                                            'icon' => 'mdi-circle-outline',
+                                                            'icon' => null,
                                                         ]);
 
                                                         DB::table('menus')->insert([
@@ -418,7 +418,7 @@ class MenuSeeder extends Seeder
                                                             'text' => 'content.notes',
                                                             'father' => 'production.workbook.reports',
                                                             'route' => null,
-                                                            'icon' => 'mdi-circle-outline',
+                                                            'icon' => null,
                                                         ]);
 
                                         DB::table('menus')->insert([
@@ -434,7 +434,7 @@ class MenuSeeder extends Seeder
                                                             'text' => 'content.users',
                                                             'father' => 'production.workbook.settings',
                                                             'route' => 'workbook_settings_users',
-                                                            'icon' => 'mdi-circle-outline',
+                                                            'icon' => null,
                                                         ]);
 
                                                         DB::table('menus')->insert([
@@ -442,7 +442,7 @@ class MenuSeeder extends Seeder
                                                             'text' => 'content.locations',
                                                             'father' => 'production.workbook.settings',
                                                             'route' => 'workbook_settings_locations',
-                                                            'icon' => 'mdi-circle-outline',
+                                                            'icon' => null,
                                                         ]);
 
         // Commercial Menu

@@ -17,17 +17,16 @@
                 <v-list-item-avatar
                     size="45px"
                 >
-                    <v-img :src="user.avatar"></v-img>
+                    <v-img :src="photo"></v-img>
                 </v-list-item-avatar>
 
                 <v-list-item-content>
-                    <v-list-item-title class="subtitle-2">{{ user.name }}</v-list-item-title>                   
+                    <v-list-item-title class="subtitle-2">{{ user.user }}</v-list-item-title>                    
                     <v-list-item-subtitle class="caption">{{ user.email }}</v-list-item-subtitle>
                 </v-list-item-content>
 
             </v-list-item>
            
-
 
             <!-- <v-list-item link>
 
@@ -48,15 +47,18 @@
 </template>
 <script>
     export default ({
+        
         props: {
             logo: String,
             user: Object,
+            photo: String,
         },
         methods: {
-            home(){
+            home() {
                 this.$router.push('/')
-            }
-        }
+            },
+            
+        },
         
     })
 </script>

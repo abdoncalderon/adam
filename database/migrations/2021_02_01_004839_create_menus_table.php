@@ -13,7 +13,7 @@ class CreateMenusTable extends Migration
             $table->string('name')->unique();
             $table->string('text');
             $table->string('route')->nullable();
-            $table->string('icon')->deafult('fa fa-circle-o');
+            $table->string('icon')->nullable();
             $table->string('father')->nullable();
             $table->boolean('isActive')->default(true);
 

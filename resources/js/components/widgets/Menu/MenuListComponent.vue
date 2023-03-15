@@ -9,13 +9,13 @@
         <template v-for="menu in menus">
             
             <menu-list-group-level0-component
-                v-if="typeof(menu.route) === 'undefined' || menu.route === null"
+                v-if="(typeof(menu.route) === 'undefined' || menu.route === null) && menu.father === null"
                 :key="menu.id"
                 :menu="menu"
             />
             
             <menu-list-item-level0-component
-                v-else
+                v-else-if="menu.father === null"
                 :key="menu.id"
                 :menu="menu"
             />

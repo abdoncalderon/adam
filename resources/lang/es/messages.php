@@ -97,7 +97,7 @@ return [
     'expectedCost'=>'Costo Esperado',
     'expensivecheap'=>'De Mayor Precio a Menor Precio',
     'fieldEmpty'=>'Error. Campo Vacio',
-    'forgotpassword' => 'Olvido su contraseña?',
+    'forgotPassword' => 'Olvido su contraseña?',
     'goBack'=>'Regresar',
     'hiredSince'=>'Contratado Desde',
     'importFromExcel'=>'Importar desde Excel',

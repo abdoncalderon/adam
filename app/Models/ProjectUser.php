@@ -9,7 +9,7 @@ class ProjectUser extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class)->with('person');
     }
 
     public function project()
@@ -19,7 +19,7 @@ class ProjectUser extends Model
 
     public function projectRole()
     {
-        return $this->belongsTo(ProjectRole::class);
+        return $this->belongsTo(ProjectRole::class)->with('role');
     }
 
     public function locationProjectUsers()

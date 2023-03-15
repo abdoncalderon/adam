@@ -1,4 +1,6 @@
-const Home = ()=> import('./views/templates/Home');
+// const Home = ()=> import('./views/layouts/Home');
+
+import HomeView from './views/layouts/Home'
 import RegionView from './views/settings/catalog/Region'
 import CountryView from './views/settings/catalog/Country'
 import StateView from './views/settings/catalog/State'
@@ -11,7 +13,7 @@ export const routes = [
     {
         name:'home',
         path: '/',
-        component: Home,
+        component: HomeView,
     },
     {
         path: '/regions',

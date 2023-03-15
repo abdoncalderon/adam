@@ -52,9 +52,6 @@
                 type: Object,
                 default: () => ({}),
             },
-        },
-        created() {
-            console.log(this.menu.menus)
         }
     }
 </script>
